@@ -19,8 +19,8 @@ import {
 } from '../../lib/productForm'
 
 const inputClass = (invalid?: boolean) =>
-  `w-full rounded-lg border bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 ${
-    invalid ? 'border-red-400 focus:ring-red-500/20' : 'border-slate-300 focus:border-brand-600 focus:ring-brand-600/20'
+  `w-full rounded-carton border bg-board px-3 py-2.5 text-sm focus:ring-2 ${
+    invalid ? 'border-danger focus:ring-danger/20' : 'border-line-2 focus:border-ink focus:ring-ink/10'
   }`
 
 export function ProductFormPage() {
@@ -34,7 +34,7 @@ export function ProductFormPage() {
   const err = product.error || brands.error || categories.error
   if (err) return <ErrorState error={err} onRetry={() => { product.refetch(); brands.refetch(); categories.refetch() }} />
   if (isEdit && !product.data) {
-    return <EmptyState title="Product not found" action={<Link to="/admin" className="font-semibold text-brand-700">Back to products</Link>} />
+    return <EmptyState title="Product not found" action={<Link to="/admin" className="font-semibold text-action">Back to products</Link>} />
   }
 
   return (
@@ -116,15 +116,15 @@ function ProductForm({
     <form onSubmit={onSubmit} noValidate className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <Link to="/admin" className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-brand-700">
+          <Link to="/admin" className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-2 hover:text-ink">
             <ArrowLeft className="size-4" aria-hidden /> All products
           </Link>
-          <h2 className="mt-1 text-lg font-semibold text-slate-900">{productId ? 'Edit product' : 'New product'}</h2>
+          <h2 className="mt-1 text-lg font-semibold text-ink">{productId ? 'Edit product' : 'New product'}</h2>
         </div>
       </div>
 
       {noTaxonomy && (
-        <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800">
+        <p className="rounded-carton bg-warn-soft px-4 py-3 text-sm text-warn">
           You need at least one brand and one category before creating a product.{' '}
           <Link to={brands.length === 0 ? '/admin/brands' : '/admin/categories'} className="font-semibold underline">
             Add them here
@@ -134,8 +134,8 @@ function ProductForm({
       )}
 
       <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-        <section className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5">
-          <h3 className="font-semibold text-slate-900">Product information</h3>
+        <section className="flex flex-col gap-4 rounded-carton border border-line bg-board p-5">
+          <h3 className="font-semibold text-ink">Product information</h3>
           <Field label="Name" error={errors.name?.message} htmlFor="name">
             <input id="name" {...register('name')} className={inputClass(!!errors.name)} placeholder="e.g. Vitamin D3 1000 IU" />
           </Field>
@@ -162,9 +162,9 @@ function ProductForm({
           </div>
         </section>
 
-        <section className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-5">
-          <h3 className="font-semibold text-slate-900">Image</h3>
-          <ProductImage src={imageUrl || null} alt="Product preview" className="aspect-square w-full rounded-xl" />
+        <section className="flex flex-col gap-3 rounded-carton border border-line bg-board p-5">
+          <h3 className="font-semibold text-ink">Image</h3>
+          <ProductImage src={imageUrl || null} alt="Product preview" className="aspect-square w-full rounded-carton" />
           <input
             ref={fileRef}
             type="file"
@@ -181,11 +181,11 @@ function ProductForm({
         </section>
       </div>
 
-      <section className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5">
+      <section className="flex flex-col gap-4 rounded-carton border border-line bg-board p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h3 className="font-semibold text-slate-900">Pricing tiers</h3>
-            <p className="text-sm text-slate-500">
+            <h3 className="font-semibold text-ink">Pricing tiers</h3>
+            <p className="text-sm text-ink-2">
               Each tier is an independent bundle offer. The bundle price is the total price for all packs in the bundle.
             </p>
           </div>
@@ -194,10 +194,10 @@ function ProductForm({
           </Button>
         </div>
 
-        {errors.tiers?.root?.message && <p className="text-sm text-red-600">{errors.tiers.root.message}</p>}
-        {errors.tiers?.message && <p className="text-sm text-red-600">{errors.tiers.message}</p>}
+        {errors.tiers?.root?.message && <p className="text-sm text-danger">{errors.tiers.root.message}</p>}
+        {errors.tiers?.message && <p className="text-sm text-danger">{errors.tiers.message}</p>}
 
-        <ul className="flex flex-col gap-3">
+        <ul className="divide-y divide-dashed divide-line-2 border-y border-line">
           {fields.map((field, index) => {
             const e = errors.tiers?.[index]
             const t = tiers?.[index]
@@ -205,7 +205,7 @@ function ProductForm({
             const units = t ? Number(t.units) : NaN
             const preview = fils && Number.isInteger(units) && units > 0 ? perPackFils({ bundlePriceFils: fils, unitsPerBundle: units }) : null
             return (
-              <li key={field.id} className="grid gap-3 rounded-xl border border-slate-200 bg-slate-50/60 p-4 sm:grid-cols-[1fr_140px_160px_auto] sm:items-start">
+              <li key={field.id} className="grid gap-3 py-4 sm:grid-cols-[1fr_140px_160px_auto] sm:items-start">
                 <Field label="Label (optional)" error={e?.label?.message} htmlFor={`tiers.${index}.label`}>
                   <input id={`tiers.${index}.label`} {...register(`tiers.${index}.label`)} className={inputClass(!!e?.label)} placeholder="e.g. Value pack" />
                 </Field>
@@ -235,7 +235,7 @@ function ProductForm({
                 <div className="sm:pt-6">
                   <Button
                     variant="ghost"
-                    className="w-full text-red-600 hover:!bg-red-50 sm:w-auto"
+                    className="w-full text-danger hover:!bg-danger-soft sm:w-auto"
                     onClick={() => remove(index)}
                     disabled={fields.length === 1}
                     aria-label={`Remove tier ${index + 1}`}
@@ -250,8 +250,8 @@ function ProductForm({
         </ul>
       </section>
 
-      <div className="sticky bottom-0 -mx-4 flex justify-end gap-2 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0">
-        <Link to="/admin" className="inline-flex items-center rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50">
+      <div className="sticky bottom-0 -mx-4 flex justify-end gap-2 border-t border-line bg-board/95 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0">
+        <Link to="/admin" className="inline-flex items-center rounded-carton px-4 py-2.5 text-sm font-semibold text-ink border border-line-2 hover:bg-board-2">
           Cancel
         </Link>
         <Button type="submit" loading={save.isPending} disabled={uploading || noTaxonomy}>
@@ -265,9 +265,9 @@ function ProductForm({
 function Field({ label, error, hint, htmlFor, children }: { label: string; error?: string; hint?: string; htmlFor: string; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label htmlFor={htmlFor} className="text-sm font-medium text-slate-700">{label}</label>
+      <label htmlFor={htmlFor} className="text-sm font-medium text-ink">{label}</label>
       {children}
-      {error ? <p className="text-xs text-red-600">{error}</p> : hint ? <p className="price text-xs text-slate-500">{hint}</p> : null}
+      {error ? <p className="text-xs text-danger">{error}</p> : hint ? <p className="price text-xs text-ink-2">{hint}</p> : null}
     </div>
   )
 }

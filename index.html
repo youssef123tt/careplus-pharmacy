@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CarePlus Pharmacy</title>
     <meta name="description" content="Healthcare products with multi-tier bundle pricing in KWD." />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      // Set the theme before first paint to avoid a flash: saved choice, else the OS preference.
+      (function () {
+        var t = null
+        try { t = localStorage.getItem('careplus.theme') } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.dataset.theme = t
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

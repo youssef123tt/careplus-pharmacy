@@ -28,12 +28,12 @@ export function ConfirmDialog({ open, title, message, confirmLabel = 'Delete', l
         e.preventDefault()
         onCancel()
       }}
-      className="m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl p-0 shadow-xl backdrop:bg-slate-900/40"
+      className="m-auto w-[calc(100%-2rem)] max-w-md rounded-carton border border-line bg-board p-0 text-ink shadow-[0_24px_60px_-20px_rgb(0_0_0/0.5)] backdrop:bg-black/55"
     >
       {open && (
         <div className="p-6">
-          <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
-          <p className="mt-2 text-sm text-slate-600">{message}</p>
+          <h2 className="carton-type text-3xl font-bold text-ink">{title}</h2>
+          <p className="mt-2 text-sm text-ink-2">{message}</p>
           <div className="mt-6 flex justify-end gap-2">
             <Button variant="secondary" onClick={onCancel} disabled={loading}>
               Cancel

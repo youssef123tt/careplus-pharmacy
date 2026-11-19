@@ -5,6 +5,7 @@ import { Layout } from './components/Layout'
 import { EmptyState } from './components/ui'
 import { CartProvider } from './context/CartContext'
 import { isSupabaseConfigured } from './lib/supabase'
+import { useTheme } from './lib/theme'
 import { CartPage } from './pages/CartPage'
 import { HomePage } from './pages/HomePage'
 import { ProductDetailsPage } from './pages/ProductDetailsPage'
@@ -19,6 +20,11 @@ const queryClient = new QueryClient({
     queries: { staleTime: 30_000, retry: 1, refetchOnWindowFocus: true },
   },
 })
+
+function ThemedToaster() {
+  const { theme } = useTheme()
+  return <Toaster position="bottom-right" theme={theme} richColors closeButton />
+}
 
 export default function App() {
   if (!isSupabaseConfigured) return <SetupRequired />
@@ -43,14 +49,14 @@ export default function App() {
                 element={
                   <EmptyState
                     title="Page not found"
-                    action={<Link to="/" className="font-semibold text-brand-700 hover:underline">Go to the shop</Link>}
+                    action={<Link to="/" className="font-semibold text-action hover:underline">Go to the shop</Link>}
                   />
                 }
               />
             </Route>
           </Routes>
         </BrowserRouter>
-        <Toaster position="bottom-right" richColors closeButton />
+        <ThemedToaster />
       </CartProvider>
     </QueryClientProvider>
   )

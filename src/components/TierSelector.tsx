@@ -1,6 +1,5 @@
-import { Check } from 'lucide-react'
 import { formatKWD } from '../lib/money'
-import { perPackFils, savingsPercent, tierSizeLabel } from '../lib/pricing'
+import { perPackFils, savingsPercent } from '../lib/pricing'
 import type { PricingTier } from '../types'
 
 interface Props {
@@ -12,21 +11,35 @@ interface Props {
   name: string
 }
 
-/** Accessible radio group of bundle offers. Shows bundle price, pack count, per-pack price and savings. */
+/**
+ * Bundle offers as "strength chips" on the carton's side panel: the pack count
+ * is the largest figure, the bundle total sits under it. Native radio group for a11y.
+ */
 export function TierSelector({ tiers, selectedId, onSelect, compact = false, name }: Props) {
   return (
     <fieldset>
       <legend className="sr-only">Choose an offer</legend>
-      <div className={compact ? 'flex flex-col gap-1.5' : 'grid gap-3 sm:grid-cols-2'}>
+      <div
+        className={
+          compact
+            ? 'grid grid-cols-[repeat(auto-fill,minmax(92px,1fr))] gap-1.5'
+            : 'grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-2.5'
+        }
+      >
         {tiers.map((tier) => {
           const selected = tier.id === selectedId
           const saving = savingsPercent(tier, tiers)
+          const unit = tier.unitsPerBundle === 1 ? 'pack' : 'packs'
           return (
             <label
               key={tier.id}
-              className={`relative flex cursor-pointer items-center justify-between gap-3 rounded-xl border bg-white transition ${
-                compact ? 'px-3 py-2' : 'px-4 py-3.5'
-              } ${selected ? 'border-brand-600 ring-2 ring-brand-600/20' : 'border-slate-200 hover:border-slate-300'}`}
+              className={`group relative flex cursor-pointer flex-col rounded-carton border transition-[color,background-color,border-color,transform] duration-150 ease-out active:scale-[0.97] has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-action ${
+                compact ? 'px-2.5 pb-2 pt-1.5' : 'px-4 pb-3.5 pt-3'
+              } ${
+                selected
+                  ? 'border-ink bg-ink text-board'
+                  : 'border-line-2 bg-board text-ink hover:border-ink'
+              }`}
             >
               <input
                 type="radio"
@@ -36,33 +49,30 @@ export function TierSelector({ tiers, selectedId, onSelect, compact = false, nam
                 onChange={() => onSelect(tier.id)}
                 className="sr-only"
               />
-              <span className="flex min-w-0 items-center gap-2.5">
+              <span className="flex items-baseline gap-1">
+                <span className={`carton-type price font-bold ${compact ? 'text-[1.75rem]' : 'text-5xl'}`}>{tier.unitsPerBundle}</span>{' '}
+                <span className={`font-semibold ${compact ? 'text-xs' : 'text-sm'}`}>{unit}</span>
+              </span>
+              {!compact && tier.label && (
+                <span className={`mt-0.5 text-sm ${selected ? 'text-board/75' : 'text-ink-2'}`}>{tier.label}</span>
+              )}
+              <span className={`price font-semibold ${compact ? 'mt-0.5 text-[13px]' : 'mt-2.5 text-lg'}`}>
+                {formatKWD(tier.bundlePriceFils)}
+              </span>
+              {!compact && tier.unitsPerBundle > 1 && (
+                <span className={`price text-xs ${selected ? 'text-board/75' : 'text-ink-3'}`}>
+                  {formatKWD(perPackFils(tier))} per pack
+                </span>
+              )}
+              {saving > 0 && (
                 <span
-                  aria-hidden
-                  className={`flex size-4 shrink-0 items-center justify-center rounded-full border ${
-                    selected ? 'border-brand-700 bg-brand-700 text-white' : 'border-slate-300'
+                  className={`font-semibold ${compact ? 'text-[11px]' : 'mt-1.5 text-xs'} ${
+                    selected ? 'text-board/90' : 'text-save'
                   }`}
                 >
-                  {selected && <Check className="size-3" strokeWidth={3} />}
+                  Save {saving}%
                 </span>
-                <span className="min-w-0">
-                  <span className={`block font-semibold text-slate-800 ${compact ? 'text-sm' : ''}`}>
-                    {tierSizeLabel(tier.unitsPerBundle)}
-                    {tier.label && !compact && <span className="font-normal text-slate-500"> · {tier.label}</span>}
-                  </span>
-                  {!compact && tier.unitsPerBundle > 1 && (
-                    <span className="price block text-xs text-slate-500">{formatKWD(perPackFils(tier))} per pack</span>
-                  )}
-                </span>
-              </span>
-              <span className="flex shrink-0 flex-col items-end">
-                <span className={`price font-bold text-slate-900 ${compact ? 'text-sm' : 'text-base'}`}>
-                  {formatKWD(tier.bundlePriceFils)}
-                </span>
-                {saving > 0 && (
-                  <span className="text-xs font-semibold text-emerald-700">Save {saving}%</span>
-                )}
-              </span>
+              )}
             </label>
           )
         })}

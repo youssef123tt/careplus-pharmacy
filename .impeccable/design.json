@@ -1,0 +1,893 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T19:11:17.641Z",
+  "title": "Design System: CarePlus",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Carton Grey",
+        "canonical": "#e6e9ec",
+        "oklch": "oklch(93.3% 0.005 247.9)",
+        "tonalRamp": [
+          "oklch(15% 0.002 247.9)",
+          "oklch(25% 0.003 247.9)",
+          "oklch(35% 0.004 247.9)",
+          "oklch(45% 0.004 247.9)",
+          "oklch(55% 0.005 247.9)",
+          "oklch(65% 0.004 247.9)",
+          "oklch(80% 0.003 247.9)",
+          "oklch(95% 0.002 247.9)"
+        ]
+      },
+      "board": {
+        "role": "neutral",
+        "displayName": "White Board",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(25% 0.000 89.9)",
+          "oklch(35% 0.000 89.9)",
+          "oklch(45% 0.000 89.9)",
+          "oklch(55% 0.000 89.9)",
+          "oklch(65% 0.000 89.9)",
+          "oklch(80% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "board-2": {
+        "role": "neutral",
+        "displayName": "Inset Board",
+        "canonical": "#f2f4f6",
+        "oklch": "oklch(96.6% 0.003 247.9)",
+        "tonalRamp": [
+          "oklch(15% 0.001 247.9)",
+          "oklch(25% 0.002 247.9)",
+          "oklch(35% 0.002 247.9)",
+          "oklch(45% 0.003 247.9)",
+          "oklch(55% 0.003 247.9)",
+          "oklch(65% 0.003 247.9)",
+          "oklch(80% 0.002 247.9)",
+          "oklch(95% 0.001 247.9)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Carton Ink",
+        "canonical": "#15181c",
+        "oklch": "oklch(20.8% 0.009 255.6)",
+        "tonalRamp": [
+          "oklch(15% 0.004 255.6)",
+          "oklch(25% 0.005 255.6)",
+          "oklch(35% 0.007 255.6)",
+          "oklch(45% 0.008 255.6)",
+          "oklch(55% 0.009 255.6)",
+          "oklch(65% 0.008 255.6)",
+          "oklch(80% 0.006 255.6)",
+          "oklch(95% 0.004 255.6)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "canonical": "#4a535b",
+        "oklch": "oklch(43.7% 0.018 245.0)",
+        "tonalRamp": [
+          "oklch(15% 0.007 245.0)",
+          "oklch(25% 0.010 245.0)",
+          "oklch(35% 0.012 245.0)",
+          "oklch(45% 0.015 245.0)",
+          "oklch(55% 0.018 245.0)",
+          "oklch(65% 0.015 245.0)",
+          "oklch(80% 0.011 245.0)",
+          "oklch(95% 0.007 245.0)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Tertiary Ink",
+        "canonical": "#59626a",
+        "oklch": "oklch(49.1% 0.017 245.0)",
+        "tonalRamp": [
+          "oklch(15% 0.007 245.0)",
+          "oklch(25% 0.010 245.0)",
+          "oklch(35% 0.012 245.0)",
+          "oklch(45% 0.015 245.0)",
+          "oklch(55% 0.017 245.0)",
+          "oklch(65% 0.015 245.0)",
+          "oklch(80% 0.011 245.0)",
+          "oklch(95% 0.007 245.0)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Board Edge",
+        "canonical": "#cdd3d8",
+        "oklch": "oklch(86.4% 0.010 242.9)",
+        "tonalRamp": [
+          "oklch(15% 0.004 242.9)",
+          "oklch(25% 0.005 242.9)",
+          "oklch(35% 0.007 242.9)",
+          "oklch(45% 0.008 242.9)",
+          "oklch(55% 0.010 242.9)",
+          "oklch(65% 0.008 242.9)",
+          "oklch(80% 0.006 242.9)",
+          "oklch(95% 0.004 242.9)"
+        ]
+      },
+      "line-2": {
+        "role": "neutral",
+        "displayName": "Strong Edge",
+        "canonical": "#b3bbc2",
+        "oklch": "oklch(78.8% 0.013 244.3)",
+        "tonalRamp": [
+          "oklch(15% 0.006 244.3)",
+          "oklch(25% 0.008 244.3)",
+          "oklch(35% 0.009 244.3)",
+          "oklch(45% 0.011 244.3)",
+          "oklch(55% 0.013 244.3)",
+          "oklch(65% 0.011 244.3)",
+          "oklch(80% 0.008 244.3)",
+          "oklch(95% 0.006 244.3)"
+        ]
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Pharmacy Green",
+        "canonical": "#0b6b4c",
+        "oklch": "oklch(46.9% 0.096 164.3)",
+        "tonalRamp": [
+          "oklch(15% 0.040 164.3)",
+          "oklch(25% 0.054 164.3)",
+          "oklch(35% 0.068 164.3)",
+          "oklch(45% 0.082 164.3)",
+          "oklch(55% 0.096 164.3)",
+          "oklch(65% 0.082 164.3)",
+          "oklch(80% 0.061 164.3)",
+          "oklch(95% 0.040 164.3)"
+        ]
+      },
+      "action-hover": {
+        "role": "primary",
+        "displayName": "Pharmacy Green Hover",
+        "canonical": "#08573d",
+        "oklch": "oklch(40.6% 0.083 164.1)",
+        "tonalRamp": [
+          "oklch(15% 0.035 164.1)",
+          "oklch(25% 0.047 164.1)",
+          "oklch(35% 0.059 164.1)",
+          "oklch(45% 0.071 164.1)",
+          "oklch(55% 0.083 164.1)",
+          "oklch(65% 0.071 164.1)",
+          "oklch(80% 0.053 164.1)",
+          "oklch(95% 0.035 164.1)"
+        ]
+      },
+      "save": {
+        "role": "primary",
+        "displayName": "Saving Green",
+        "canonical": "#0b6b4c",
+        "oklch": "oklch(46.9% 0.096 164.3)",
+        "tonalRamp": [
+          "oklch(15% 0.040 164.3)",
+          "oklch(25% 0.054 164.3)",
+          "oklch(35% 0.068 164.3)",
+          "oklch(45% 0.082 164.3)",
+          "oklch(55% 0.096 164.3)",
+          "oklch(65% 0.082 164.3)",
+          "oklch(80% 0.061 164.3)",
+          "oklch(95% 0.040 164.3)"
+        ]
+      },
+      "danger": {
+        "role": "status",
+        "displayName": "Danger",
+        "canonical": "#b3192e",
+        "oklch": "oklch(49.4% 0.185 21.6)",
+        "tonalRamp": [
+          "oklch(15% 0.077 21.6)",
+          "oklch(25% 0.104 21.6)",
+          "oklch(35% 0.131 21.6)",
+          "oklch(45% 0.158 21.6)",
+          "oklch(55% 0.185 21.6)",
+          "oklch(65% 0.158 21.6)",
+          "oklch(80% 0.118 21.6)",
+          "oklch(95% 0.077 21.6)"
+        ]
+      },
+      "danger-soft": {
+        "role": "status",
+        "displayName": "Danger Soft",
+        "canonical": "#fbe9eb",
+        "oklch": "oklch(94.9% 0.020 9.8)",
+        "tonalRamp": [
+          "oklch(15% 0.008 9.8)",
+          "oklch(25% 0.011 9.8)",
+          "oklch(35% 0.014 9.8)",
+          "oklch(45% 0.017 9.8)",
+          "oklch(55% 0.020 9.8)",
+          "oklch(65% 0.017 9.8)",
+          "oklch(80% 0.013 9.8)",
+          "oklch(95% 0.008 9.8)"
+        ]
+      },
+      "warn": {
+        "role": "status",
+        "displayName": "Caution",
+        "canonical": "#8a4a00",
+        "oklch": "oklch(47.7% 0.113 59.1)",
+        "tonalRamp": [
+          "oklch(15% 0.047 59.1)",
+          "oklch(25% 0.064 59.1)",
+          "oklch(35% 0.080 59.1)",
+          "oklch(45% 0.097 59.1)",
+          "oklch(55% 0.113 59.1)",
+          "oklch(65% 0.097 59.1)",
+          "oklch(80% 0.072 59.1)",
+          "oklch(95% 0.047 59.1)"
+        ]
+      },
+      "warn-soft": {
+        "role": "status",
+        "displayName": "Caution Soft",
+        "canonical": "#fff3df",
+        "oklch": "oklch(96.8% 0.029 80.7)",
+        "tonalRamp": [
+          "oklch(15% 0.012 80.7)",
+          "oklch(25% 0.017 80.7)",
+          "oklch(35% 0.021 80.7)",
+          "oklch(45% 0.025 80.7)",
+          "oklch(55% 0.029 80.7)",
+          "oklch(65% 0.025 80.7)",
+          "oklch(80% 0.019 80.7)",
+          "oklch(95% 0.012 80.7)"
+        ]
+      },
+      "action-ink": {
+        "role": "primary",
+        "displayName": "Ink on Green",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(25% 0.000 89.9)",
+          "oklch(35% 0.000 89.9)",
+          "oklch(45% 0.000 89.9)",
+          "oklch(55% 0.000 89.9)",
+          "oklch(65% 0.000 89.9)",
+          "oklch(80% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Green",
+        "canonical": "#0b6b4c",
+        "oklch": "oklch(46.9% 0.096 164.3)",
+        "tonalRamp": [
+          "oklch(15% 0.040 164.3)",
+          "oklch(25% 0.054 164.3)",
+          "oklch(35% 0.068 164.3)",
+          "oklch(45% 0.082 164.3)",
+          "oklch(55% 0.096 164.3)",
+          "oklch(65% 0.082 164.3)",
+          "oklch(80% 0.061 164.3)",
+          "oklch(95% 0.040 164.3)"
+        ]
+      },
+      "save-dark": {
+        "role": "primary",
+        "displayName": "Saving Green (dark theme)",
+        "canonical": "#5fd3a6",
+        "oklch": "oklch(78.8% 0.125 165.2)",
+        "tonalRamp": [
+          "oklch(15% 0.052 165.2)",
+          "oklch(25% 0.070 165.2)",
+          "oklch(35% 0.089 165.2)",
+          "oklch(45% 0.107 165.2)",
+          "oklch(55% 0.125 165.2)",
+          "oklch(65% 0.107 165.2)",
+          "oklch(80% 0.079 165.2)",
+          "oklch(95% 0.052 165.2)"
+        ]
+      },
+      "danger-soft-dark": {
+        "role": "status",
+        "displayName": "Danger Soft (dark theme)",
+        "canonical": "#3a1a1f",
+        "oklch": "oklch(26.5% 0.051 11.2)",
+        "tonalRamp": [
+          "oklch(15% 0.021 11.2)",
+          "oklch(25% 0.029 11.2)",
+          "oklch(35% 0.036 11.2)",
+          "oklch(45% 0.043 11.2)",
+          "oklch(55% 0.051 11.2)",
+          "oklch(65% 0.043 11.2)",
+          "oklch(80% 0.032 11.2)",
+          "oklch(95% 0.021 11.2)"
+        ]
+      },
+      "warn-soft-dark": {
+        "role": "status",
+        "displayName": "Caution Soft (dark theme)",
+        "canonical": "#33270f",
+        "oklch": "oklch(28.1% 0.042 82.9)",
+        "tonalRamp": [
+          "oklch(15% 0.017 82.9)",
+          "oklch(25% 0.023 82.9)",
+          "oklch(35% 0.030 82.9)",
+          "oklch(45% 0.036 82.9)",
+          "oklch(55% 0.042 82.9)",
+          "oklch(65% 0.036 82.9)",
+          "oklch(80% 0.027 82.9)",
+          "oklch(95% 0.017 82.9)"
+        ]
+      },
+      "focus-dark": {
+        "role": "primary",
+        "displayName": "Focus Green (dark theme)",
+        "canonical": "#5fd3a6",
+        "oklch": "oklch(78.8% 0.125 165.2)",
+        "tonalRamp": [
+          "oklch(15% 0.052 165.2)",
+          "oklch(25% 0.070 165.2)",
+          "oklch(35% 0.089 165.2)",
+          "oklch(45% 0.107 165.2)",
+          "oklch(55% 0.125 165.2)",
+          "oklch(65% 0.107 165.2)",
+          "oklch(80% 0.079 165.2)",
+          "oklch(95% 0.052 165.2)"
+        ]
+      },
+      "ground-dark": {
+        "role": "neutral",
+        "displayName": "Carton Grey (dark theme)",
+        "canonical": "#0e1113",
+        "oklch": "oklch(17.5% 0.006 237.0)",
+        "tonalRamp": [
+          "oklch(15% 0.003 237.0)",
+          "oklch(25% 0.004 237.0)",
+          "oklch(35% 0.005 237.0)",
+          "oklch(45% 0.005 237.0)",
+          "oklch(55% 0.006 237.0)",
+          "oklch(65% 0.005 237.0)",
+          "oklch(80% 0.004 237.0)",
+          "oklch(95% 0.003 237.0)"
+        ]
+      },
+      "board-dark": {
+        "role": "neutral",
+        "displayName": "White Board (dark theme)",
+        "canonical": "#171b1f",
+        "oklch": "oklch(22.0% 0.010 248.3)",
+        "tonalRamp": [
+          "oklch(15% 0.004 248.3)",
+          "oklch(25% 0.006 248.3)",
+          "oklch(35% 0.007 248.3)",
+          "oklch(45% 0.008 248.3)",
+          "oklch(55% 0.010 248.3)",
+          "oklch(65% 0.008 248.3)",
+          "oklch(80% 0.006 248.3)",
+          "oklch(95% 0.004 248.3)"
+        ]
+      },
+      "board-2-dark": {
+        "role": "neutral",
+        "displayName": "Inset Board (dark theme)",
+        "canonical": "#1f2429",
+        "oklch": "oklch(25.7% 0.012 248.3)",
+        "tonalRamp": [
+          "oklch(15% 0.005 248.3)",
+          "oklch(25% 0.007 248.3)",
+          "oklch(35% 0.008 248.3)",
+          "oklch(45% 0.010 248.3)",
+          "oklch(55% 0.012 248.3)",
+          "oklch(65% 0.010 248.3)",
+          "oklch(80% 0.008 248.3)",
+          "oklch(95% 0.005 248.3)"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Carton Ink (dark theme)",
+        "canonical": "#e7eaed",
+        "oklch": "oklch(93.6% 0.005 247.9)",
+        "tonalRamp": [
+          "oklch(15% 0.002 247.9)",
+          "oklch(25% 0.003 247.9)",
+          "oklch(35% 0.004 247.9)",
+          "oklch(45% 0.004 247.9)",
+          "oklch(55% 0.005 247.9)",
+          "oklch(65% 0.004 247.9)",
+          "oklch(80% 0.003 247.9)",
+          "oklch(95% 0.002 247.9)"
+        ]
+      },
+      "ink-2-dark": {
+        "role": "neutral",
+        "displayName": "Secondary Ink (dark theme)",
+        "canonical": "#a9b1b8",
+        "oklch": "oklch(75.6% 0.013 244.3)",
+        "tonalRamp": [
+          "oklch(15% 0.006 244.3)",
+          "oklch(25% 0.008 244.3)",
+          "oklch(35% 0.010 244.3)",
+          "oklch(45% 0.012 244.3)",
+          "oklch(55% 0.013 244.3)",
+          "oklch(65% 0.012 244.3)",
+          "oklch(80% 0.009 244.3)",
+          "oklch(95% 0.006 244.3)"
+        ]
+      },
+      "ink-3-dark": {
+        "role": "neutral",
+        "displayName": "Tertiary Ink (dark theme)",
+        "canonical": "#8f979e",
+        "oklch": "oklch(67.2% 0.014 244.3)",
+        "tonalRamp": [
+          "oklch(15% 0.006 244.3)",
+          "oklch(25% 0.008 244.3)",
+          "oklch(35% 0.010 244.3)",
+          "oklch(45% 0.012 244.3)",
+          "oklch(55% 0.014 244.3)",
+          "oklch(65% 0.012 244.3)",
+          "oklch(80% 0.009 244.3)",
+          "oklch(95% 0.006 244.3)"
+        ]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Board Edge (dark theme)",
+        "canonical": "#2b3238",
+        "oklch": "oklch(31.3% 0.014 244.1)",
+        "tonalRamp": [
+          "oklch(15% 0.006 244.1)",
+          "oklch(25% 0.008 244.1)",
+          "oklch(35% 0.010 244.1)",
+          "oklch(45% 0.012 244.1)",
+          "oklch(55% 0.014 244.1)",
+          "oklch(65% 0.012 244.1)",
+          "oklch(80% 0.009 244.1)",
+          "oklch(95% 0.006 244.1)"
+        ]
+      },
+      "line-2-dark": {
+        "role": "neutral",
+        "displayName": "Strong Edge (dark theme)",
+        "canonical": "#3d454c",
+        "oklch": "oklch(38.6% 0.016 244.6)",
+        "tonalRamp": [
+          "oklch(15% 0.007 244.6)",
+          "oklch(25% 0.009 244.6)",
+          "oklch(35% 0.011 244.6)",
+          "oklch(45% 0.014 244.6)",
+          "oklch(55% 0.016 244.6)",
+          "oklch(65% 0.014 244.6)",
+          "oklch(80% 0.010 244.6)",
+          "oklch(95% 0.007 244.6)"
+        ]
+      },
+      "action-dark": {
+        "role": "primary",
+        "displayName": "Pharmacy Green (dark theme)",
+        "canonical": "#3cc28f",
+        "oklch": "oklch(72.9% 0.138 163.4)",
+        "tonalRamp": [
+          "oklch(15% 0.058 163.4)",
+          "oklch(25% 0.078 163.4)",
+          "oklch(35% 0.098 163.4)",
+          "oklch(45% 0.118 163.4)",
+          "oklch(55% 0.138 163.4)",
+          "oklch(65% 0.118 163.4)",
+          "oklch(80% 0.088 163.4)",
+          "oklch(95% 0.058 163.4)"
+        ]
+      },
+      "action-hover-dark": {
+        "role": "primary",
+        "displayName": "Pharmacy Green Hover (dark theme)",
+        "canonical": "#5fd3a6",
+        "oklch": "oklch(78.8% 0.125 165.2)",
+        "tonalRamp": [
+          "oklch(15% 0.052 165.2)",
+          "oklch(25% 0.070 165.2)",
+          "oklch(35% 0.089 165.2)",
+          "oklch(45% 0.107 165.2)",
+          "oklch(55% 0.125 165.2)",
+          "oklch(65% 0.107 165.2)",
+          "oklch(80% 0.079 165.2)",
+          "oklch(95% 0.052 165.2)"
+        ]
+      },
+      "action-ink-dark": {
+        "role": "primary",
+        "displayName": "Ink on Green (dark theme)",
+        "canonical": "#062419",
+        "oklch": "oklch(23.4% 0.042 165.3)",
+        "tonalRamp": [
+          "oklch(15% 0.017 165.3)",
+          "oklch(25% 0.024 165.3)",
+          "oklch(35% 0.030 165.3)",
+          "oklch(45% 0.036 165.3)",
+          "oklch(55% 0.042 165.3)",
+          "oklch(65% 0.036 165.3)",
+          "oklch(80% 0.027 165.3)",
+          "oklch(95% 0.017 165.3)"
+        ]
+      },
+      "danger-dark": {
+        "role": "status",
+        "displayName": "Danger (dark theme)",
+        "canonical": "#ff8692",
+        "oklch": "oklch(75.7% 0.147 15.0)",
+        "tonalRamp": [
+          "oklch(15% 0.061 15.0)",
+          "oklch(25% 0.083 15.0)",
+          "oklch(35% 0.104 15.0)",
+          "oklch(45% 0.126 15.0)",
+          "oklch(55% 0.147 15.0)",
+          "oklch(65% 0.126 15.0)",
+          "oklch(80% 0.093 15.0)",
+          "oklch(95% 0.061 15.0)"
+        ]
+      },
+      "warn-dark": {
+        "role": "status",
+        "displayName": "Caution (dark theme)",
+        "canonical": "#f3c06a",
+        "oklch": "oklch(83.6% 0.119 79.0)",
+        "tonalRamp": [
+          "oklch(15% 0.050 79.0)",
+          "oklch(25% 0.067 79.0)",
+          "oklch(35% 0.085 79.0)",
+          "oklch(45% 0.102 79.0)",
+          "oklch(55% 0.119 79.0)",
+          "oklch(65% 0.102 79.0)",
+          "oklch(80% 0.076 79.0)",
+          "oklch(95% 0.050 79.0)"
+        ]
+      },
+      "band-orange": {
+        "role": "secondary",
+        "displayName": "Vitamin Orange",
+        "canonical": "#e8850c",
+        "oklch": "oklch(70.9% 0.162 60.9)",
+        "tonalRamp": [
+          "oklch(15% 0.068 60.9)",
+          "oklch(25% 0.092 60.9)",
+          "oklch(35% 0.115 60.9)",
+          "oklch(45% 0.139 60.9)",
+          "oklch(55% 0.162 60.9)",
+          "oklch(65% 0.139 60.9)",
+          "oklch(80% 0.103 60.9)",
+          "oklch(95% 0.068 60.9)"
+        ]
+      },
+      "band-blue": {
+        "role": "secondary",
+        "displayName": "Personal-care Blue",
+        "canonical": "#1f6fc4",
+        "oklch": "oklch(54.1% 0.152 253.8)",
+        "tonalRamp": [
+          "oklch(15% 0.064 253.8)",
+          "oklch(25% 0.086 253.8)",
+          "oklch(35% 0.108 253.8)",
+          "oklch(45% 0.130 253.8)",
+          "oklch(55% 0.152 253.8)",
+          "oklch(65% 0.130 253.8)",
+          "oklch(80% 0.097 253.8)",
+          "oklch(95% 0.064 253.8)"
+        ]
+      },
+      "band-red": {
+        "role": "secondary",
+        "displayName": "First-aid Red",
+        "canonical": "#c62839",
+        "oklch": "oklch(54.1% 0.192 21.5)",
+        "tonalRamp": [
+          "oklch(15% 0.080 21.5)",
+          "oklch(25% 0.108 21.5)",
+          "oklch(35% 0.136 21.5)",
+          "oklch(45% 0.164 21.5)",
+          "oklch(55% 0.192 21.5)",
+          "oklch(65% 0.164 21.5)",
+          "oklch(80% 0.122 21.5)",
+          "oklch(95% 0.080 21.5)"
+        ]
+      },
+      "band-violet": {
+        "role": "secondary",
+        "displayName": "Baby Violet",
+        "canonical": "#7048b6",
+        "oklch": "oklch(50.3% 0.167 296.7)",
+        "tonalRamp": [
+          "oklch(15% 0.070 296.7)",
+          "oklch(25% 0.094 296.7)",
+          "oklch(35% 0.118 296.7)",
+          "oklch(45% 0.143 296.7)",
+          "oklch(55% 0.167 296.7)",
+          "oklch(65% 0.143 296.7)",
+          "oklch(80% 0.106 296.7)",
+          "oklch(95% 0.070 296.7)"
+        ]
+      },
+      "band-olive": {
+        "role": "secondary",
+        "displayName": "Herbal Olive",
+        "canonical": "#6f8f1f",
+        "oklch": "oklch(60.5% 0.139 124.8)",
+        "tonalRamp": [
+          "oklch(15% 0.058 124.8)",
+          "oklch(25% 0.078 124.8)",
+          "oklch(35% 0.099 124.8)",
+          "oklch(45% 0.119 124.8)",
+          "oklch(55% 0.139 124.8)",
+          "oklch(65% 0.119 124.8)",
+          "oklch(80% 0.088 124.8)",
+          "oklch(95% 0.058 124.8)"
+        ]
+      },
+      "band-magenta": {
+        "role": "secondary",
+        "displayName": "Beauty Magenta",
+        "canonical": "#b8336a",
+        "oklch": "oklch(53.7% 0.175 359.8)",
+        "tonalRamp": [
+          "oklch(15% 0.073 359.8)",
+          "oklch(25% 0.098 359.8)",
+          "oklch(35% 0.124 359.8)",
+          "oklch(45% 0.149 359.8)",
+          "oklch(55% 0.175 359.8)",
+          "oklch(65% 0.149 359.8)",
+          "oklch(80% 0.111 359.8)",
+          "oklch(95% 0.073 359.8)"
+        ]
+      },
+      "band-slate": {
+        "role": "secondary",
+        "displayName": "Label Slate",
+        "canonical": "#4f5d6b",
+        "oklch": "oklch(47.2% 0.029 248.4)",
+        "tonalRamp": [
+          "oklch(15% 0.012 248.4)",
+          "oklch(25% 0.016 248.4)",
+          "oklch(35% 0.020 248.4)",
+          "oklch(45% 0.024 248.4)",
+          "oklch(55% 0.029 248.4)",
+          "oklch(65% 0.024 248.4)",
+          "oklch(80% 0.018 248.4)",
+          "oklch(95% 0.012 248.4)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Storefront and product-page h1; 2.6rem mobile, 3.75rem from 640px; condensed uppercase."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Cart and admin page titles."
+      },
+      "title": {
+        "displayName": "Carton Title",
+        "purpose": "Product names on cards (1.9rem) and cart lines (1.5rem), dialog and state titles."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Pack counts on strength chips (1.75rem compact, 3rem full) and grand totals (2.25rem); tabular."
+      },
+      "heading-ui": {
+        "displayName": "UI Heading",
+        "purpose": "Sentence-case section headings in Barlow."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Product descriptions and lede; max 65ch."
+      },
+      "body-ui": {
+        "displayName": "Body UI",
+        "purpose": "Buttons, chips, nav, fields, meta lines."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Pack units, savings, badges, hints, footer; sentence case."
+      }
+    },
+    "shadows": [
+      {
+        "name": "carton-lift",
+        "value": "0 6px 18px -10px rgb(0 0 0 / 0.35)",
+        "purpose": "Carton card hover only, with edge shift line to line-2."
+      },
+      {
+        "name": "dialog-drop",
+        "value": "0 24px 60px -20px rgb(0 0 0 / 0.5)",
+        "purpose": "Modal confirm dialog over a 55% black backdrop."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-fast",
+        "value": "150ms ease-out",
+        "purpose": "Button, chip, tab colour and underline-height transitions; chip press scale 0.97."
+      },
+      {
+        "name": "surface",
+        "value": "200ms ease-out",
+        "purpose": "Card hover lift, theme background/colour swap, grid fade while refetching."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "All transitions and animations collapse under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "container",
+        "value": "1280px"
+      }
+    ],
+    "theme": {
+      "mechanism": "<html data-theme=\"light|dark\"> set before first paint in index.html from localStorage key careplus.theme, else prefers-color-scheme; toggled via applyTheme/useTheme in src/lib/theme.ts. Semantic tokens switch; band hues do not."
+    },
+    "illustration": {
+      "canvas": "400x400 SVG",
+      "outline": "#5e6a76 at 6px",
+      "body": "#ffffff",
+      "accents": "category band hexes, plus material tints #f3c9a1 (skin), #e8b10c (capsule), #9aa3ab (probe)",
+      "forbidden": "gradients, filters, opacity, shading"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pharmacy-green action; add-to-cart carries the bundle total.",
+      "html": "<button class=\"ds-btn-primary\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"21\" r=\"1\"/><circle cx=\"19\" cy=\"21\" r=\"1\"/><path d=\"M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12\"/></svg><span class=\"ds-tnum\">Add to cart — 5.500 KWD</span></button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:3px;padding:10px 16px;font-family:\"Barlow\", system-ui, sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background-color .15s,color .15s;border:0;background:var(--action, #0b6b4c);color:var(--action-ink, #fff);} .ds-btn-primary:hover{background:var(--action-hover, #08573d);} .ds-btn-primary:focus-visible{outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;} .ds-btn-primary:disabled{opacity:.45;cursor:not-allowed;} .ds-tnum{font-variant-numeric:tabular-nums;}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White board with an ink outline; cancel, retry, clear filters.",
+      "html": "<button class=\"ds-btn-secondary\">Clear filters</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:3px;padding:10px 16px;font-family:\"Barlow\", system-ui, sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background-color .15s,color .15s;background:var(--board, #fff);color:var(--ink, #15181c);border:1px solid color-mix(in srgb, var(--ink, #15181c) 80%, transparent);} .ds-btn-secondary:hover{background:var(--board-2, #f2f4f6);} .ds-btn-secondary:focus-visible{outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Quiet inline action; destructive variant turns danger.",
+      "html": "<button class=\"ds-btn-ghost\">Details</button> <button class=\"ds-btn-ghost ds-btn-ghost--danger\">Remove</button>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:3px;padding:10px 16px;font-family:\"Barlow\", system-ui, sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background-color .15s,color .15s;border:0;background:transparent;color:var(--ink-2, #4a535b);} .ds-btn-ghost:hover{background:var(--board-2, #f2f4f6);color:var(--ink, #15181c);} .ds-btn-ghost:focus-visible{outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;} .ds-btn-ghost--danger{color:var(--danger, #b3192e);} .ds-btn-ghost--danger:hover{background:var(--danger-soft, #fbe9eb);color:var(--danger, #b3192e);}"
+    },
+    {
+      "name": "Strength Chips",
+      "kind": "custom",
+      "refersTo": "strength-chip",
+      "description": "Bundle offers as strength chips: pack count largest, total under it; selected inverts to ink.",
+      "html": "<div class=\"ds-chips\" role=\"radiogroup\" aria-label=\"Choose an offer\"><label class=\"ds-chip ds-chip--on\"><input type=\"radio\" name=\"t\" checked><span><b class=\"ds-num\">1</b> pack</span><span class=\"ds-p\">5.500 KWD</span></label><label class=\"ds-chip\"><input type=\"radio\" name=\"t\"><span><b class=\"ds-num\">4</b> packs</span><span class=\"ds-p\">19.500 KWD</span><span class=\"ds-save\">Save 11%</span></label><label class=\"ds-chip\"><input type=\"radio\" name=\"t\"><span><b class=\"ds-num\">12</b> packs</span><span class=\"ds-p\">55.000 KWD</span><span class=\"ds-save\">Save 17%</span></label></div>",
+      "css": ".ds-chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:6px;max-width:360px;font-family:\"Barlow\", system-ui, sans-serif;} .ds-chip{position:relative;display:flex;flex-direction:column;padding:6px 10px 8px;border-radius:3px;border:1px solid var(--line-2, #b3bbc2);background:var(--board, #fff);color:var(--ink, #15181c);cursor:pointer;font-size:12px;font-weight:600;transition:border-color .15s,background-color .15s,transform .15s ease-out;} .ds-chip:hover{border-color:var(--ink, #15181c);} .ds-chip:active{transform:scale(.97);} .ds-chip:has(input:focus-visible){outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;} .ds-chip input{position:absolute;opacity:0;width:1px;height:1px;} .ds-chip--on{background:var(--ink, #15181c);color:var(--board, #fff);border-color:var(--ink, #15181c);} .ds-chip--on .ds-save{color:inherit;opacity:.9;} .ds-num{font-family:\"Barlow Condensed\", \"Barlow\", sans-serif;font-size:1.75rem;font-weight:700;line-height:.95;font-variant-numeric:tabular-nums;} .ds-p{font-size:13px;font-variant-numeric:tabular-nums;margin-top:2px;} .ds-save{font-size:11px;color:var(--save, #0b6b4c);}"
+    },
+    {
+      "name": "Brand Chip",
+      "kind": "chip",
+      "refersTo": "brand-chip",
+      "description": "Filter chip; active inverts to ink.",
+      "html": "<button class=\"ds-bchip ds-bchip--on\">All</button> <button class=\"ds-bchip\">VitaWell <span class=\"ds-c\">2</span></button>",
+      "css": ".ds-bchip{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 12px;border-radius:3px;border:1px solid var(--line-2, #b3bbc2);background:var(--board, #fff);color:var(--ink, #15181c);font-family:\"Barlow\", system-ui, sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .15s;} .ds-bchip:hover{border-color:var(--ink, #15181c);} .ds-bchip:focus-visible{outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;} .ds-bchip--on{background:var(--ink, #15181c);color:var(--board, #fff);border-color:var(--ink, #15181c);} .ds-c{font-size:12px;color:var(--ink-3, #59626a);font-variant-numeric:tabular-nums;}"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Board field with strong edge; focus shifts the edge to ink.",
+      "html": "<label class=\"ds-search\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input type=\"search\" placeholder=\"Search products\" aria-label=\"Search products\"></label>",
+      "css": ".ds-search{position:relative;display:block;width:288px;color:var(--ink-3, #59626a);} .ds-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);} .ds-search input{width:100%;height:40px;padding:0 12px 0 36px;border-radius:3px;border:1px solid var(--line-2, #b3bbc2);background:var(--board, #fff);color:var(--ink, #15181c);font-family:\"Barlow\", system-ui, sans-serif;font-size:14px;caret-color:var(--action, #0b6b4c);} .ds-search input::placeholder{color:var(--ink-3, #59626a);} .ds-search input:focus-visible{border-color:var(--ink, #15181c);outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "header",
+      "description": "Sticky 64px board strip: wordmark, links with ink underline when active, cart badge.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-wm\" href=\"#\"><svg viewBox=\"0 0 28 28\" width=\"28\" height=\"28\" aria-hidden=\"true\"><rect width=\"28\" height=\"28\" rx=\"3\" fill=\"var(--action, #0b6b4c)\"/><path d=\"M11 6h6v5h5v6h-5v5h-6v-5H6v-6h5z\" fill=\"var(--action-ink, #fff)\"/></svg><span>Care<em>Plus</em></span></a><nav><a class=\"ds-nl ds-nl--on\" href=\"#\">Shop</a><a class=\"ds-nl\" href=\"#\">Admin</a><a class=\"ds-nl\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"21\" r=\"1\"/><circle cx=\"19\" cy=\"21\" r=\"1\"/><path d=\"M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12\"/></svg> Cart <span class=\"ds-badge\">3</span></a></nav></header>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;background:var(--board, #fff);border-bottom:1px solid var(--line, #cdd3d8);font-family:\"Barlow\", system-ui, sans-serif;} .ds-wm{display:flex;align-items:center;gap:10px;text-decoration:none;} .ds-wm span{font-family:\"Barlow Condensed\", \"Barlow\", sans-serif;font-size:1.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:.95;color:var(--ink, #15181c);} .ds-wm em{font-style:normal;color:var(--action, #0b6b4c);} .ds-nav nav{display:flex;} .ds-nl{position:relative;display:inline-flex;align-items:center;gap:6px;height:64px;padding:0 12px;font-size:14px;font-weight:600;color:var(--ink-2, #4a535b);text-decoration:none;transition:color .15s;} .ds-nl:hover{color:var(--ink, #15181c);} .ds-nl:focus-visible{outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;} .ds-nl--on{color:var(--ink, #15181c);} .ds-nl--on::after{content:\"\";position:absolute;left:12px;right:12px;bottom:0;height:3px;background:var(--ink, #15181c);} .ds-badge{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 4px;border-radius:2px;background:var(--ink, #15181c);color:var(--board, #fff);font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;}"
+    },
+    {
+      "name": "Category Tabs",
+      "kind": "custom",
+      "refersTo": "category-tabs",
+      "description": "Categories as carton tabs underlined in their printed band hue.",
+      "html": "<ul class=\"ds-tabs\"><li><button class=\"ds-tab ds-tab--on\" style=\"--b:var(--ink, #15181c)\">All</button></li><li><button class=\"ds-tab\" style=\"--b:#c62839\">First Aid &amp; Devices <span>2</span></button></li><li><button class=\"ds-tab\" style=\"--b:#1f6fc4\">Personal Care <span>3</span></button></li><li><button class=\"ds-tab\" style=\"--b:#e8850c\">Vitamins &amp; Supplements <span>2</span></button></li></ul>",
+      "css": ".ds-tabs{display:flex;list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line, #cdd3d8);font-family:\"Barlow\", system-ui, sans-serif;} .ds-tab{position:relative;display:flex;align-items:center;gap:8px;height:44px;padding:0 14px;border:0;background:none;font-size:15px;color:var(--ink-2, #4a535b);cursor:pointer;transition:color .15s;} .ds-tab span{font-size:12px;color:var(--ink-3, #59626a);font-variant-numeric:tabular-nums;} .ds-tab::after{content:\"\";position:absolute;left:4px;right:4px;bottom:-1px;height:2px;background:var(--b);transition:height .15s;} .ds-tab:hover{color:var(--ink, #15181c);} .ds-tab:hover::after{height:3px;} .ds-tab:focus-visible{outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;} .ds-tab--on{font-weight:600;color:var(--ink, #15181c);} .ds-tab--on::after{height:5px;}"
+    },
+    {
+      "name": "Carton Card",
+      "kind": "card",
+      "refersTo": "carton-card",
+      "description": "A product as its carton face: band, condensed name, inset image window, perforation, offers, add to cart.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-band\"></div><div class=\"ds-face\"><div><h3>Vitamin C 1000 mg Effervescent</h3><p class=\"ds-brand\">VitaWell</p><p class=\"ds-cat\">Vitamins &amp; Supplements</p></div><div class=\"ds-win\"><svg viewBox=\"0 0 400 400\" aria-hidden=\"true\"><rect x=\"138\" y=\"78\" width=\"124\" height=\"258\" rx=\"8\" fill=\"#fff\" stroke=\"#5e6a76\" stroke-width=\"6\"/><rect x=\"141\" y=\"81\" width=\"118\" height=\"48\" fill=\"#e8850c\"/><circle cx=\"200\" cy=\"210\" r=\"44\" fill=\"#e8850c\"/><path d=\"M200 176v68M166 210h68M176 186l48 48M224 186l-48 48\" stroke=\"#fff\" stroke-width=\"6\"/><rect x=\"160\" y=\"282\" width=\"80\" height=\"8\" fill=\"#5e6a76\"/><rect x=\"172\" y=\"300\" width=\"56\" height=\"8\" fill=\"#5e6a76\"/></svg></div></div><div class=\"ds-perf\"></div><div class=\"ds-side\"><button class=\"ds-add\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"21\" r=\"1\"/><circle cx=\"19\" cy=\"21\" r=\"1\"/><path d=\"M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12\"/></svg><span>Add to cart — 5.500 KWD</span></button></div></article>",
+      "css": ".ds-card{width:380px;overflow:hidden;border-radius:3px;border:1px solid var(--line, #cdd3d8);background:var(--board, #fff);font-family:\"Barlow\", system-ui, sans-serif;transition:border-color .2s,box-shadow .2s;} .ds-card:hover{border-color:var(--line-2, #b3bbc2);box-shadow:0 6px 18px -10px rgb(0 0 0 / .35);} .ds-band{height:10px;background:#e8850c;} .ds-face{display:grid;grid-template-columns:1fr 8.5rem;gap:16px;padding:16px 20px 0;} .ds-face h3{margin:0;font-family:\"Barlow Condensed\", \"Barlow\", sans-serif;font-size:1.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.01em;line-height:.95;color:var(--ink, #15181c);} .ds-brand{margin:12px 0 0;font-size:14px;font-weight:600;color:var(--ink, #15181c);} .ds-cat{margin:0;font-size:14px;color:var(--ink-2, #4a535b);} .ds-win{aspect-ratio:3/4;border-radius:2px;background:var(--board-2, #f2f4f6);} .ds-win svg{width:100%;height:100%;} .ds-perf{margin:16px 20px 0;border-top:1px dashed var(--line-2, #b3bbc2);} .ds-side{padding:14px 20px 20px;} .ds-add{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:3px;padding:10px 16px;font-family:\"Barlow\", system-ui, sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background-color .15s,color .15s;width:100%;border:0;background:var(--action, #0b6b4c);color:var(--action-ink, #fff);font-variant-numeric:tabular-nums;} .ds-add:hover{background:var(--action-hover, #08573d);} .ds-add:focus-visible{outline:2px solid var(--focus, #0b6b4c);outline-offset:2px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Medicine Carton",
+    "overview": "Every product is the face of its medicine carton. A product card is a white printed board on a cool carton-grey counter: a flat full-strength category band across the top, the product name set in condensed capitals like box copy, a flat-print illustration in an inset window, a dashed perforation, and below it the side panel where the bundle offers sit as strength chips. The same carton grammar scales out to the product page (band, image window, perforation, spec panel), the cart (band-capped thumbnails, an ink-banded order summary) and the admin list (band-capped thumbnails).\n\nThe world is dense, legible and quiet in the way a pharmacy shelf is: near-black ink on white board, hairline edges, tight 3px corners, and exactly one green that means \"act\". Colour beyond that green is printed category colour only, and it reads the same in both themes. Numbers are the loudest type on the page because prices and pack counts are what the shopper has to trust. The dark theme is the same carton printed on dark board: semantic tokens invert, bands do not.\n\nThe world explicitly refuses the gradient hero and the soft, heavily rounded card grid of generic storefronts.",
+    "keyCharacteristics": [
+      "Cool carton-grey ground, white board surfaces, 1px board edges, 3px corners.",
+      "One pharmacy green, for actions only.",
+      "Flat full-strength category bands from a fixed set of seven hues, identical in light and dark.",
+      "Barlow Condensed uppercase for product names, page titles and numerals; Barlow for all UI copy.",
+      "A dashed perforation rule separates a carton's face from its side panel.",
+      "Selection is shown by inverting to ink, never by colour.",
+      "Tabular figures on every price and quantity."
+    ],
+    "rules": [
+      {
+        "name": "The One Green Rule",
+        "body": "Green means \"act\" or \"you save\". It never decorates, never tints a surface, never colours a band.",
+        "section": "colors"
+      },
+      {
+        "name": "The Printed Band Rule",
+        "body": "Category colour appears only as printed matter: the top band of a carton, the underline of a category tab, a small square swatch beside a category name. Bands keep their light-theme hex in dark mode and never carry text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Selection Rule",
+        "body": "Selected or active state is ink fill with board text (strength chips, brand chips, cart badge) or an ink underline (nav, admin tabs). Never green, never a band hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Carton Copy Rule",
+        "body": "Uppercase condensed type is reserved for product names, page and dialog titles, and numerals. All UI copy, labels and headings below the title tier stay sentence-case Barlow. There are no letter-spaced uppercase labels anywhere.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every price, quantity, count and total uses tabular figures, and prices are always shown as bundle totals in KWD with three decimals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Board Rule",
+        "body": "Boards rest flat on the counter. Shadow appears only as a response to hover or modality; resting surfaces never carry one.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do set every surface as white board (`board`) on carton grey (`ground`) with a 1px `line` edge and 3px corners.",
+      "Do cap every product representation (card, detail panel, cart thumbnail, admin thumbnail) with its category band, edge to edge.",
+      "Do separate a carton's face from its offers or totals with the 1px dashed `line-2` perforation.",
+      "Do show selection by inverting to ink fill with board text.",
+      "Do set product names, page titles and numerals in Barlow Condensed 700 uppercase at line-height 0.95; keep everything else in sentence-case Barlow.",
+      "Do use tabular figures on every price and quantity, and show prices as bundle totals in KWD with three decimals.",
+      "Do keep bands at their fixed hex in both themes; only semantic tokens switch under `[data-theme='dark']`.",
+      "Do draw product illustrations as flat print: white body, slate outline, band-hue accents."
+    ],
+    "donts": [
+      "Don't build a gradient hero or a soft, heavily rounded card grid; corners stop at 3px and nothing is pill-shaped.",
+      "Don't use green for anything that is not an action, focus, or a saving.",
+      "Don't put text on a band or use a band hue for a button, chip fill or selected state.",
+      "Don't add resting shadows; shadow is for card hover and the modal dialog only.",
+      "Don't introduce new band hues outside the fixed seven, or reassign a known category's hue.",
+      "Don't add gradients, filters or shading to product illustrations."
+    ]
+  }
+}

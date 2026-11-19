@@ -6,10 +6,10 @@ export function ProductImage({ src, alt, className = '' }: { src: string | null;
   const [failed, setFailed] = useState(false)
   if (!src || failed) {
     return (
-      <div className={`flex items-center justify-center bg-slate-100 text-slate-400 ${className}`} role="img" aria-label={alt}>
-        <ImageOff className="size-1/4 max-h-12 max-w-12" aria-hidden />
+      <div className={`flex items-center justify-center bg-board-2 text-ink-3 ${className}`} role="img" aria-label={alt}>
+        <ImageOff className="size-1/4 max-h-10 max-w-10" strokeWidth={1.5} aria-hidden />
       </div>
     )
   }
-  return <img src={src} alt={alt} loading="lazy" onError={() => setFailed(true)} className={`object-cover ${className}`} />
+  return <img src={src} alt={alt} loading="lazy" onError={() => setFailed(true)} className={`object-contain ${className}`} />
 }

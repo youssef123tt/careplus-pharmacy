@@ -56,7 +56,7 @@ export function TaxonomyPage({ table }: { table: TaxonomyTable }) {
   return (
     <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
       <section className="order-2 lg:order-1">
-        <h2 className="mb-3 font-semibold text-slate-900">{c.plural}</h2>
+        <h2 className="mb-3 font-semibold text-ink">{c.plural}</h2>
         {isLoading ? (
           <Spinner />
         ) : error ? (
@@ -64,7 +64,7 @@ export function TaxonomyPage({ table }: { table: TaxonomyTable }) {
         ) : !data?.length ? (
           <EmptyState title={`No ${c.plural.toLowerCase()} yet`} message={`Add a ${c.singular} using the form.`} />
         ) : (
-          <ul className="divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <ul className="divide-y divide-line overflow-hidden rounded-carton border border-line bg-board">
             {data.map((item) => (
               <TaxonomyRow
                 key={item.id}
@@ -78,19 +78,19 @@ export function TaxonomyPage({ table }: { table: TaxonomyTable }) {
         )}
       </section>
 
-      <form onSubmit={onCreate} noValidate className="order-1 h-fit rounded-2xl border border-slate-200 bg-white p-5 lg:order-2">
-        <h2 className="font-semibold text-slate-900">Add {c.singular}</h2>
-        <label htmlFor="new-name" className="mt-3 block text-sm font-medium text-slate-700">Name</label>
+      <form onSubmit={onCreate} noValidate className="order-1 h-fit rounded-carton border border-line bg-board p-5 lg:order-2">
+        <h2 className="font-semibold text-ink">Add {c.singular}</h2>
+        <label htmlFor="new-name" className="mt-3 block text-sm font-medium text-ink">Name</label>
         <input
           id="new-name"
           value={newName}
           onChange={(e) => { setNewName(e.target.value); setNewError(null) }}
           placeholder={c.placeholder}
-          className={`mt-1.5 w-full rounded-lg border px-3 py-2.5 text-sm focus:outline-none focus:ring-2 ${
-            newError ? 'border-red-400 focus:ring-red-500/20' : 'border-slate-300 focus:border-brand-600 focus:ring-brand-600/20'
+          className={`mt-1.5 w-full rounded-carton border px-3 py-2.5 text-sm focus:ring-2 ${
+            newError ? 'border-danger focus:ring-danger/20' : 'border-line-2 focus:border-ink focus:ring-ink/10'
           }`}
         />
-        {newError && <p className="mt-1 text-xs text-red-600">{newError}</p>}
+        {newError && <p className="mt-1 text-xs text-danger">{newError}</p>}
         <Button type="submit" className="mt-4 w-full" loading={create.isPending}>
           <Plus className="size-4" aria-hidden /> Add {c.singular}
         </Button>
@@ -152,9 +152,9 @@ function TaxonomyRow({
               value={name}
               onChange={(e) => { setName(e.target.value); setError(null) }}
               onKeyDown={(e) => e.key === 'Escape' && (setEditing(false), setName(item.name), setError(null))}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/20"
+              className="w-full rounded-carton border border-line-2 px-3 py-2 text-sm focus:border-ink focus:ring-2 focus:ring-ink/10"
             />
-            {error && <p className="mt-1 text-xs text-red-600">{error}</p>}
+            {error && <p className="mt-1 text-xs text-danger">{error}</p>}
           </div>
           <Button type="submit" className="!px-3" loading={saving} aria-label="Save name">
             <Check className="size-4" aria-hidden />
@@ -170,14 +170,14 @@ function TaxonomyRow({
   return (
     <li className="flex items-center justify-between gap-3 px-4 py-3">
       <div className="min-w-0">
-        <p className="truncate font-medium text-slate-900">{item.name}</p>
-        <p className="text-xs text-slate-500">{item.productCount} product{item.productCount === 1 ? '' : 's'}</p>
+        <p className="truncate font-medium text-ink">{item.name}</p>
+        <p className="text-xs text-ink-2">{item.productCount} product{item.productCount === 1 ? '' : 's'}</p>
       </div>
       <div className="flex shrink-0 gap-1">
         <Button variant="ghost" className="!px-3" onClick={() => setEditing(true)} aria-label={`Rename ${item.name}`}>
           <Pencil className="size-4" aria-hidden />
         </Button>
-        <Button variant="ghost" className="!px-3 text-red-600 hover:!bg-red-50" onClick={onDelete} aria-label={`Delete ${item.name}`}>
+        <Button variant="ghost" className="!px-3 text-danger hover:!bg-danger-soft" onClick={onDelete} aria-label={`Delete ${item.name}`}>
           <Trash2 className="size-4" aria-hidden />
         </Button>
       </div>

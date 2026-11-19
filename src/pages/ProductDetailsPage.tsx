@@ -6,8 +6,9 @@ import { useProduct } from '../api/hooks'
 import { ProductImage } from '../components/ProductImage'
 import { QuantityStepper } from '../components/QuantityStepper'
 import { TierSelector } from '../components/TierSelector'
-import { Badge, Button, EmptyState, ErrorState, Spinner } from '../components/ui'
+import { Button, EmptyState, ErrorState, Spinner } from '../components/ui'
 import { useCart } from '../context/CartContext'
+import { categoryBand } from '../lib/categoryBand'
 import { formatKWD } from '../lib/money'
 import { lineTotalFils, packQuantity, tierSizeLabel } from '../lib/pricing'
 
@@ -27,7 +28,7 @@ export function ProductDetailsPage() {
       <EmptyState
         title="Product not found"
         message="This product may have been removed from the catalog."
-        action={<Link to="/" className="font-semibold text-brand-700 hover:underline">Back to the shop</Link>}
+        action={<Link to="/" className="font-semibold text-action hover:underline">Back to the shop</Link>}
       />
     )
   }
@@ -36,6 +37,7 @@ export function ProductDetailsPage() {
   const tier = product.tiers.find((t) => t.id === tierId) ?? product.tiers[0]
   const total = tier ? lineTotalFils(tier.bundlePriceFils, bundles) : 0
   const packs = tier ? packQuantity(tier.unitsPerBundle, bundles) : 0
+  const band = categoryBand(product.category.name)
 
   const addToCart = () => {
     if (!tier) return
@@ -48,63 +50,72 @@ export function ProductDetailsPage() {
 
   return (
     <div>
-      <Link to="/" className="mb-5 inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-brand-700">
+      <Link to="/" className="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold text-ink-2 hover:text-ink">
         <ArrowLeft className="size-4" aria-hidden /> Back to products
       </Link>
 
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-2 lg:gap-12">
-        <div className="self-start overflow-hidden rounded-3xl border border-slate-200 bg-white">
-          <ProductImage src={product.imageUrl} alt={product.name} className="aspect-square w-full" />
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-14">
+        <div className="self-start overflow-hidden rounded-carton border border-line bg-board lg:sticky lg:top-24">
+          <div className={`h-3 ${band}`} aria-hidden />
+          <ProductImage src={product.imageUrl} alt={product.name} className="aspect-[16/10] w-full p-4 sm:aspect-square sm:p-8" />
+          <div className="perforation" aria-hidden />
+          <dl className="grid grid-cols-2 text-sm">
+            <div className="border-r border-line px-5 py-3.5">
+              <dt className="text-ink-3">Brand</dt>
+              <dd><Link to={`/?brand=${product.brand.id}`} className="font-semibold text-ink decoration-2 hover:underline">{product.brand.name}</Link></dd>
+            </div>
+            <div className="px-5 py-3.5">
+              <dt className="text-ink-3">Category</dt>
+              <dd className="flex items-center gap-1.5"><span className={`size-2.5 shrink-0 rounded-[1px] ${band}`} aria-hidden /><Link to={`/?category=${product.category.id}`} className="font-semibold text-ink decoration-2 hover:underline">{product.category.name}</Link></dd>
+            </div>
+          </dl>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-7">
           <div>
-            <div className="flex flex-wrap gap-2">
-              <Link to={`/?brand=${product.brand.id}`}>
-                <Badge tone="brand">{product.brand.name}</Badge>
-              </Link>
-              <Link to={`/?category=${product.category.id}`}>
-                <Badge>{product.category.name}</Badge>
-              </Link>
-            </div>
-            <h1 className="mt-3 text-2xl font-bold text-slate-900 sm:text-3xl">{product.name}</h1>
-            {product.description && <p className="mt-3 whitespace-pre-line leading-relaxed text-slate-600">{product.description}</p>}
+            <h1 className="carton-type text-[2.6rem] font-bold text-balance sm:text-6xl">{product.name}</h1>
+            {product.description && (
+              <p className="mt-5 max-w-[65ch] whitespace-pre-line text-[15px] leading-relaxed text-ink-2">{product.description}</p>
+            )}
           </div>
 
-          <section aria-labelledby="offers-heading" className="flex flex-col gap-3">
-            <h2 id="offers-heading" className="font-semibold text-slate-900">
-              Choose an offer <span className="font-normal text-slate-500">({product.tiers.length} available)</span>
+          <section aria-labelledby="offers-heading" className="flex flex-col gap-3 border-t border-line pt-6">
+            <h2 id="offers-heading" className="text-base font-semibold text-ink">
+              Choose an offer <span className="font-normal text-ink-3">({product.tiers.length} available)</span>
             </h2>
             {product.tiers.length === 0 ? (
-              <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800">This product has no offers available right now.</p>
+              <p className="rounded-carton bg-warn-soft px-4 py-3 text-sm text-warn">This product has no offers available right now.</p>
             ) : (
               <TierSelector tiers={product.tiers} selectedId={tier?.id} onSelect={setTierId} name="tier" />
             )}
           </section>
 
           {tier && (
-            <section className="rounded-2xl border border-slate-200 bg-white p-5" aria-label="Order summary">
-              <div className="flex flex-wrap items-end justify-between gap-4">
+            <section className="rounded-carton border border-line bg-board" aria-label="Order summary">
+              <div className="flex flex-wrap items-end justify-between gap-5 p-5">
                 <div>
-                  <p className="mb-2 text-sm font-medium text-slate-700">Number of bundles</p>
+                  <p className="mb-2 text-sm font-medium text-ink-2">Number of bundles</p>
                   <QuantityStepper value={bundles} onChange={setBundles} />
                 </div>
                 <div className="text-right">
-                  <p className="text-sm text-slate-500">
+                  <p className="price text-sm text-ink-3">
                     {bundles} × {formatKWD(tier.bundlePriceFils)}
                   </p>
-                  <p className="price text-2xl font-bold text-slate-900" data-testid="details-total">
+                  <p className="price carton-type text-4xl font-bold text-ink" data-testid="details-total">
                     {formatKWD(total)}
                   </p>
                 </div>
               </div>
-              <p className="mt-3 text-sm text-slate-500">
-                You get <span className="font-semibold text-slate-700">{packs} {packs === 1 ? 'pack' : 'packs'}</span> in total
-                ({bundles} {bundles === 1 ? 'bundle' : 'bundles'} of {tierSizeLabel(tier.unitsPerBundle)}).
-              </p>
-              <Button onClick={addToCart} className="mt-4 w-full !py-3 text-base">
-                <ShoppingCart className="size-5" aria-hidden /> Add to cart — {formatKWD(total)}
-              </Button>
+              <div className="perforation mx-5" aria-hidden />
+              <div className="flex flex-col gap-4 p-5">
+                <p className="text-sm text-ink-2">
+                  You get <span className="font-semibold text-ink">{packs} {packs === 1 ? 'pack' : 'packs'}</span> in total
+                  ({bundles} {bundles === 1 ? 'bundle' : 'bundles'} of {tierSizeLabel(tier.unitsPerBundle)}).
+                </p>
+                <Button onClick={addToCart} className="w-full !py-3.5 text-base">
+                  <ShoppingCart className="size-5" aria-hidden /> Add to cart — {formatKWD(total)}
+                </Button>
+              </div>
             </section>
           )}
         </div>

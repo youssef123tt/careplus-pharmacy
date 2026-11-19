@@ -19,6 +19,17 @@ Store managers maintain products, brands, categories and pricing tiers from an a
 | **Shopping cart** (`/cart`) | Each line shows the product, offer, bundles, internal pack quantity and line price. You can update quantities or remove items, and totals recalculate. Different offers of the same product stay as **separate lines**. |
 | **Admin** (`/admin`) | Create, edit and delete products (name, description, image upload or URL, brand, category). Add, edit and remove **any number** of pricing tiers. Manage brands and categories. Every change is saved to the database and shows up on the storefront. |
 
+### Design
+
+- **Light and dark themes.** The header has a toggle. The first visit follows the OS setting, the choice is remembered, and it is applied before first paint, so the page never flashes the wrong theme.
+- **"Medicine carton" visual language.** Each product is drawn as the face of its box:
+  - a flat category band (orange for vitamins, blue for personal care, red for first aid);
+  - the name set in condensed capitals (Barlow Condensed, self-hosted);
+  - a dashed perforation;
+  - the offers as "strength chips", with the pack count as the largest figure.
+- **One colour for actions.** Pharmacy green is used only for things you can press.
+- **Documentation.** The design system is documented in [`DESIGN.md`](DESIGN.md), and product context is in [`PRODUCT.md`](PRODUCT.md).
+
 ### Required test products (seeded)
 
 | Brief | Product | Offers |

@@ -33,13 +33,13 @@ export function QuantityStepper({ value, onChange, label = 'Number of bundles', 
 
   return (
     <div className="inline-flex flex-col">
-      <div className={`inline-flex items-center rounded-lg bg-white ring-1 ${invalid ? 'ring-red-400' : 'ring-slate-300'}`}>
+      <div className={`inline-flex items-center rounded-carton border bg-board ${invalid ? "border-danger" : "border-ink/70"}`}>
         <button
           type="button"
           aria-label="Decrease bundles"
           disabled={value <= MIN_BUNDLES}
           onClick={() => onChange(clampBundles(value - 1))}
-          className={`${btn} flex items-center justify-center rounded-l-lg text-slate-600 hover:bg-slate-100 disabled:cursor-not-allowed disabled:text-slate-300`}
+          className={`${btn} flex items-center justify-center text-ink hover:bg-board-2 disabled:cursor-not-allowed disabled:text-ink-3/50`}
         >
           <Minus className="size-4" aria-hidden />
         </button>
@@ -57,20 +57,20 @@ export function QuantityStepper({ value, onChange, label = 'Number of bundles', 
             if (e.key === 'Enter') commit((e.target as HTMLInputElement).value)
             if (['e', 'E', '+', '-', '.', ','].includes(e.key)) e.preventDefault()
           }}
-          className={`price w-12 border-x border-slate-200 bg-transparent text-center font-semibold focus:outline-none ${size === 'sm' ? 'h-8 text-sm' : 'h-10'}`}
+          className={`price w-12 border-x border-line bg-transparent text-center font-semibold text-ink ${size === 'sm' ? 'h-8 text-sm' : 'h-10'}`}
         />
         <button
           type="button"
           aria-label="Increase bundles"
           disabled={value >= MAX_BUNDLES}
           onClick={() => onChange(clampBundles(value + 1))}
-          className={`${btn} flex items-center justify-center rounded-r-lg text-slate-600 hover:bg-slate-100 disabled:cursor-not-allowed disabled:text-slate-300`}
+          className={`${btn} flex items-center justify-center text-ink hover:bg-board-2 disabled:cursor-not-allowed disabled:text-ink-3/50`}
         >
           <Plus className="size-4" aria-hidden />
         </button>
       </div>
       {invalid && (
-        <span className="mt-1 text-xs text-red-600">
+        <span className="mt-1 text-xs text-danger">
           Enter a whole number from {MIN_BUNDLES} to {MAX_BUNDLES}
         </span>
       )}

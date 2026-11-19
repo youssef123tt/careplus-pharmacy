@@ -36,6 +36,8 @@ page.on('pageerror', (e) => consoleErrors.push('PAGEERROR ' + e.message))
 const card = (name) => page.locator('article').filter({ has: page.getByRole('heading', { name }) })
 const cartCount = async () => (await page.getByRole('link', { name: /^Cart, \d+ items/ }).getAttribute('aria-label')).match(/\d+/)[0]
 const text = async (loc) => (await loc.innerText()).replace(/\s+/g, ' ').trim()
+// Product names are uppercased by CSS (carton type), so compare text case-insensitively.
+const has = (t, s) => t.toLowerCase().includes(s.toLowerCase())
 const waitGrid = () => page.locator('article').first().waitFor({ timeout: 20000 })
 
 // ---------------------------------------------------------------- 01 Home
@@ -59,7 +61,7 @@ await check('Product A has exactly 1 option, B 2, C 3 on the home page', async (
 })
 await check('Product C prices are 5.500 / 19.500 / 55.000 KWD (3 decimals)', async () => {
   const t = await text(card('Vitamin C 1000 mg Effervescent'))
-  for (const p of ['5.500 KWD', '19.500 KWD', '55.000 KWD']) assert(t.includes(p), `missing ${p}`)
+  for (const p of ['5.500 KWD', '19.500 KWD', '55.000 KWD']) assert(has(t, p), `missing ${p}`)
 })
 await check('Brand and category lists are shown (>=2 each)', async () => {
   const filters = page.getByRole('complementary', { name: 'Filters' })
@@ -81,7 +83,7 @@ await check('Filter by category (combined with brand) and clear filters', async 
   await page.getByRole('button', { name: /^First Aid & Devices/ }).click()
   await page.waitForURL(/category=/)
   await page.waitForFunction(() => [...document.querySelectorAll('article')].every((x) => /first aid/i.test(x.innerText)))
-  const names = await page.locator('article h3').allInnerTexts()
+  const names = await page.locator('article h3').allTextContents()
   assert(names.includes('Digital Thermometer') && names.includes('Adhesive Bandages (40 strips)'), names.join(','))
   await page.getByRole('button', { name: 'Clear filters' }).first().click()
   await page.waitForFunction((n) => document.querySelectorAll('article').length === n, TOTAL)
@@ -112,7 +114,7 @@ console.log('== 02 Product details')
 await check('Details page shows info, image, brand, category and all 3 offers', async () => {
   const main = page.locator('main')
   const t = await text(main)
-  for (const s of ['VitaWell', 'Vitamins & Supplements', 'immune', 'Choose an offer (3 available)']) assert(t.includes(s), `missing "${s}"`)
+  for (const s of ['VitaWell', 'Vitamins & Supplements', 'immune', 'Choose an offer (3 available)']) assert(has(t, s), `missing "${s}"`)
   assert((await main.getByRole('radio').count()) === 3, 'not 3 offers')
   const ok = await page.$eval('main img', (i) => i.complete && i.naturalWidth > 0)
   assert(ok, 'image not loaded')
@@ -122,7 +124,7 @@ await check('Brief example: 4-pack x 2 bundles = 39.000 KWD, 8 packs', async () 
   await page.getByRole('button', { name: 'Increase bundles' }).click()
   const total = await text(page.getByTestId('details-total'))
   assert(total === '39.000 KWD', `total ${total}`)
-  assert((await text(page.locator('main'))).includes('8 packs in total'), 'no 8 packs')
+  assert(has(await text(page.locator('main')), '8 packs in total'), 'no 8 packs')
 })
 await check('Price recalculates for other offers (12-pack x 3 = 165.000)', async () => {
   await page.locator('main label', { hasText: '12 packs' }).click()
@@ -165,7 +167,7 @@ await page.screenshot({ path: SHOTS + 'desktop-cart.png', fullPage: true })
 await check('Cart shows product, offer, bundle quantity, packs and line price', async () => {
   const l = lineFor(/Vitamin C[\s\S]*4 packs/)
   const t = await text(l)
-  for (const s of ['Vitamin C 1000 mg Effervescent', 'Offer: 4 packs', '19.500 KWD / bundle', '2 × 4 packs = 8 packs', '39.000 KWD']) assert(t.includes(s), `missing "${s}" in: ${t}`)
+  for (const s of ['Vitamin C 1000 mg Effervescent', 'Offer: 4 packs', '19.500 KWD / bundle', '2 × 4 packs = 8 packs', '39.000 KWD']) assert(has(t, s), `missing "${s}" in: ${t}`)
 })
 await check('Different offers of the same product are separate cart lines', async () => {
   const vit = await lines().filter({ hasText: 'Vitamin C' }).count()
@@ -215,7 +217,7 @@ await page.screenshot({ path: SHOTS + 'desktop-admin.png', fullPage: true })
 
 await check('Admin lists products with their tiers', async () => {
   const t = await text(page.locator('main'))
-  for (const s of ['Digital Thermometer', 'Vitamin C 1000 mg Effervescent', '12 packs · 55.000 KWD']) assert(t.includes(s), `missing ${s}`)
+  for (const s of ['Digital Thermometer', 'Vitamin C 1000 mg Effervescent', '12 packs · 55.000 KWD']) assert(has(t, s), `missing ${s}`)
 })
 await check('Create brand and category', async () => {
   await page.getByRole('link', { name: 'Brands' }).click()
@@ -286,7 +288,7 @@ await check('New product appears on storefront after refresh, filterable by its 
   await page.getByRole('button', { name: new RegExp('^' + BRAND) }).click()
   await page.waitForFunction(() => document.querySelectorAll('article').length === 1)
   const t = await text(card(PROD))
-  for (const s of ['2.250 KWD', '12.000 KWD', '6 packs']) assert(t.includes(s), `missing ${s}: ${t}`)
+  for (const s of ['2.250 KWD', '12.000 KWD', '6 packs']) assert(has(t, s), `missing ${s}: ${t}`)
   assert((await card(PROD).getByRole('radio').count()) === 2, 'not 2 options')
 })
 await check('Edit product: change price, add a 3rd tier, rename', async () => {
@@ -311,7 +313,7 @@ await check('Edits persist and show on the product details page', async () => {
   await page.reload()
   await page.getByText('Choose an offer (3 available)').waitFor()
   const t = await text(page.locator('main'))
-  for (const s of ['11.500 KWD', '40.000 KWD', '24 packs', BRAND, CAT]) assert(t.includes(s), `missing ${s}`)
+  for (const s of ['11.500 KWD', '40.000 KWD', '24 packs', BRAND, CAT]) assert(has(t, s), `missing ${s}`)
 })
 await check('Cart flags a price change made by the admin', async () => {
   await page.locator('main label', { hasText: '6 packs' }).click()
@@ -350,7 +352,7 @@ await check('Delete product (with confirmation)', async () => {
   await toast(`Deleted "${PROD} v2"`)
   await page.reload()
   await page.locator('main li').first().waitFor()
-  assert(!(await text(page.locator('main'))).includes(PROD), 'product still listed')
+  assert(!has(await text(page.locator('main')), PROD), 'product still listed')
 })
 await check('Delete brand and category once unused', async () => {
   await page.goto(BASE + '/admin/brands')
