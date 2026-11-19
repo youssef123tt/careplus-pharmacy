@@ -4,20 +4,20 @@ import { useCart } from '../context/CartContext'
 import { useTheme } from '../lib/theme'
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
-  `relative inline-flex h-16 items-center gap-1.5 px-3 text-sm font-semibold transition-colors ${
+  `relative inline-flex h-16 items-center gap-1.5 px-2.5 text-sm sm:px-3 font-semibold transition-colors ${
     isActive
-      ? 'text-ink after:absolute after:inset-x-3 after:bottom-0 after:h-[3px] after:bg-ink'
+      ? 'text-ink after:absolute after:inset-x-2.5 sm:after:inset-x-3 after:bottom-0 after:h-[3px] after:bg-ink'
       : 'text-ink-2 hover:text-ink'
   }`
 
 function Wordmark() {
   return (
-    <Link to="/" className="flex items-center gap-2.5" aria-label="CarePlus home">
+    <Link to="/" className="flex shrink-0 items-center gap-2" aria-label="CarePlus home">
       <svg viewBox="0 0 28 28" className="size-7" aria-hidden>
         <rect width="28" height="28" rx="3" className="fill-action" />
         <path d="M11 6h6v5h5v6h-5v5h-6v-5H6v-6h5z" className="fill-action-ink" />
       </svg>
-      <span className="carton-type text-[1.6rem] font-bold tracking-[0.02em] text-ink">
+      <span className="carton-type text-[1.4rem] font-bold tracking-[0.02em] text-ink sm:text-[1.6rem]">
         Care<span className="text-action">Plus</span>
       </span>
     </Link>
@@ -45,7 +45,7 @@ export function Layout() {
   return (
     <div className="flex min-h-dvh flex-col">
       <header className="sticky top-0 z-30 border-b border-line bg-board/95 backdrop-blur-sm">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6">
           <Wordmark />
           <nav className="flex items-center" aria-label="Main">
             <NavLink to="/" end className={navClass} aria-label="Shop">
@@ -56,7 +56,7 @@ export function Layout() {
               <Settings className="size-4 sm:hidden" aria-hidden />
               <span className="hidden sm:inline">Admin</span>
             </NavLink>
-            <span className="mx-1 h-6 w-px bg-line" aria-hidden />
+            <span className="mx-0.5 h-6 w-px bg-line sm:mx-1" aria-hidden />
             <ThemeToggle />
             <NavLink to="/cart" className={navClass} aria-label={`Cart, ${lineCount} items`}>
               <ShoppingCart className="size-[18px]" aria-hidden />
