@@ -6,6 +6,7 @@ Store managers maintain products, brands, categories and pricing tiers from an a
 
 - **Live app:** https://careplus-pharmacy-rho.vercel.app
 - **Admin panel:** https://careplus-pharmacy-rho.vercel.app/admin (no login; authentication is out of scope)
+- **Source code:** https://github.com/youssef123tt/careplus-pharmacy
 
 ---
 
